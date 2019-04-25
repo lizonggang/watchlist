@@ -40,3 +40,10 @@ movies = [
     {'title': 'WALL-E', 'year': '2008'},
     {'title': 'The Pork of Music', 'year': '2012'},
 ]
+
+if __name__ == '__main__':
+    app.run(
+        host='0.0.0.0',
+        port=5000,
+        debug=True
+    )
