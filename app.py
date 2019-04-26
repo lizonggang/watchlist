@@ -125,7 +125,7 @@ def inject_user():
 @app.errorhandler(404)
 def page_not_found(e):
     user = User.query.first()
-    return render_template('errors/404.html', user=user), 404
+    return render_template('templates/errors/404.html', user=user), 404
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
