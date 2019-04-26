@@ -1,2 +1,3 @@
 FLASK_ENV=development
-FLASK_ENV=watchlist
+FLASK_APP=watchlist
+
