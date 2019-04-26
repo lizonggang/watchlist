@@ -125,7 +125,7 @@ def inject_user():
 @app.errorhandler(404)
 def page_not_found(e):
     user = User.query.first()
-    return render_template('templates/errors/404.html', user=user), 404
+    return render_template('errors/404.html', user=user), 404
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -144,7 +144,7 @@ def index():
         return redirect(url_for('index'))
 
     movies = Movie.query.all()
-    return render_template('templates/index.html', movies=movies)
+    return render_template('index.html', movies=movies)
 
 @app.route('/movie/edit/<int:movie_id>', methods=['GET', 'POST'])
 @login_required
@@ -168,7 +168,7 @@ def edit(movie_id):
         flash('Item updated.')
         return redirect(url_for('index'))
 
-    return render_template('templates/edit.html', movie=movie)
+    return render_template('edit.html', movie=movie)
 
 
 @app.route('/movie/delete/<int:movie_id>', methods=['POST'])
@@ -197,7 +197,7 @@ def settings():
         flash('Settings updated.')
         return redirect(url_for('index'))
 
-    return render_template('templates/settings.html')
+    return render_template('settings.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -220,7 +220,7 @@ def login():
         flash('Invalid username or password.')
         return redirect(url_for('login'))
 
-    return render_template('templates/login.html')
+    return render_template('login.html')
 
 
 @app.route('/logout')
